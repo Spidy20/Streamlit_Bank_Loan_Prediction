@@ -9,10 +9,10 @@ def run():
     img1 = Image.open('bank.png')
     img1 = img1.resize((156,145))
     st.image(img1,use_column_width=False)
-    st.title("Bank Loan Prediction using Machine Learning")
+    st.title("Kinsa Loan Prediction using Machine Learning")
 
     ## Account No
-    account_no = st.text_input('Account number')
+    account_no = st.text_input('Customer number')
 
     ## Full Name
     fn = st.text_input('Full Name')
@@ -62,7 +62,7 @@ def run():
     loan_amt = st.number_input("Loan Amount",value=0)
 
     ## loan duration
-    dur_display = ['2 Month','6 Month','8 Month','1 Year','16 Month']
+    dur_display = ['1month','2 Month','6 Month','8 Month','1 Year','16 Month']
     dur_options = range(len(dur_display))
     dur = st.selectbox("Loan Duration",dur_options, format_func=lambda x: dur_display[x])
 
@@ -86,14 +86,14 @@ def run():
         if ans == 0:
             st.error(
                 "Hello: " + fn +" || "
-                "Account number: "+account_no +' || '
-                'According to our Calculations, you will not get the loan from Bank'
+                "Customer number: "+account_no +' || '
+                'According to our Calculations, you will not get the loan from Page'
             )
         else:
             st.success(
                 "Hello: " + fn +" || "
-                "Account number: "+account_no +' || '
-                'Congratulations!! you will get the loan from Bank'
+                "Customer number: "+account_no +' || '
+                'Congratulations!! you will get the loan from Page'
             )
 
 run()
